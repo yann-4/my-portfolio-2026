@@ -1,0 +1,96 @@
+
+{% extends "base.html" %}
+
+{% block title %}Home - My Portfolio{% endblock %}
+
+{% block content %}
+
+<div class="hero">
+
+    <div class="hero-text">
+        <p>Hi, I'm</p>
+
+        <h1>Yann<span class="highlight">.</span></h1>
+
+        <p>
+            I'm a Grade 12 student interested in technology,
+            programming and computer engineering. I enjoy
+            building practical projects, solving problems and
+            learning new skills.
+        </p>
+
+        <a class="button" href="{% url 'about' %}">
+            Learn more →
+        </a>
+    </div>
+
+    <img
+        class="hero-image"
+        src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1000&q=80"
+        alt="Computer screen showing a programming workspace"
+    >
+
+</div>
+
+<h2 class="section-title">My Projects</h2>
+
+<div class="projects">
+
+    <div class="card">
+        <img
+            src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=700&q=80"
+            alt="Code displayed on a computer screen"
+        >
+
+        <div class="card-content">
+            <h3>Django Portfolio</h3>
+
+            <p>
+                A personal website built with Django templates,
+                HTML and CSS to showcase my interests and work.
+            </p>
+
+            <a href="{% url 'about' %}">Learn more →</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <img
+            src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=700&q=80"
+            alt="Computer server equipment"
+        >
+
+        <div class="card-content">
+            <h3>Music Server</h3>
+
+            <p>
+                Exploring music streaming, server applications
+                and tools for organising a personal music library.
+            </p>
+
+            <a href="{% url 'about' %}">Learn more →</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <img
+            src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=700&q=80"
+            alt="Electronic circuit board"
+        >
+
+        <div class="card-content">
+            <h3>Electronics Projects</h3>
+
+            <p>
+                Exploring electronics through Arduino,
+                LEDs, sensors and simple automation experiments.
+            </p>
+
+            <a href="{% url 'about' %}">Learn more →</a>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
+
