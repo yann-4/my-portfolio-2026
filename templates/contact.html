@@ -1,30 +1,48 @@
-
 {% extends "base.html" %}
 
-{% block title %}Contact - My Portfolio{% endblock %}
+{% block title %}Contact | Yann{% endblock %}
 
 {% block content %}
 
-<h1>Contact <span class="highlight">Me</span></h1>
-
-<p>
-    Thanks for visiting my portfolio. You can find my
-    contact details below.
-</p>
-
-<div class="info-box">
-    <h3>Email</h3>
-    <p>shemaimanzi4@gmail.com</p>
-
-    <h3>GitHub</h3>
-    <p>
-        <a class="highlight"
-           href="https://github.com/yann-4"
-           target="_blank">
-            View my GitHub profile →
-        </a>
+<section class="container page-head">
+    <p class="eyebrow mono">// Comms channel</p>
+    <h1>Let's talk<span class="accent">.</span></h1>
+    <p class="lead">
+        Want to collaborate, talk tech, or tell me which Iron Man suit is the
+        best? Get in touch.
     </p>
-</div>
+</section>
+
+<section class="container section-tight">
+    <div class="grid grid-3">
+        <a class="card contact-card" href="mailto:{{ email }}">
+            <span class="feature-icon mono">@</span>
+            <h3>Email</h3>
+            <p class="mono">{{ email }}</p>
+            <span class="link-arrow">Send an email</span>
+        </a>
+        <a class="card contact-card" href="tel:{{ phone_link }}">
+            <span class="feature-icon mono">&#x260E;</span>
+            <h3>Phone</h3>
+            <p class="mono">{{ phone }}</p>
+            <span class="link-arrow">Call me</span>
+        </a>
+        <a class="card contact-card" href="{{ github_url }}" target="_blank" rel="noopener">
+            <span class="feature-icon mono">&lt;/&gt;</span>
+            <h3>GitHub</h3>
+            <p class="mono">github.com/yann-4</p>
+            <span class="link-arrow">View my code</span>
+        </a>
+    </div>
+</section>
+
+<section class="container section">
+    <div class="terminal mono" aria-label="Message from Jarvis">
+        <div class="terminal-bar"><span></span><span></span><span></span> jarvis@yann:~</div>
+        <pre class="terminal-body">&gt; incoming transmission detected
+&gt; routing to Yann...
+&gt; average reply time: fast, unless there's a match on<span class="cursor"></span></pre>
+    </div>
+</section>
 
 {% endblock %}
-

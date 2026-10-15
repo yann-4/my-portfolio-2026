@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Gallery | Yann{% endblock %}
+
+{% block content %}
+
+<section class="container page-head">
+    <p class="eyebrow mono">// Archive footage</p>
+    <h1>Gallery<span class="accent">.</span></h1>
+    <p class="lead">
+        In the lab, at the workbench, on the pitch and on stage.
+    </p>
+</section>
+
+<section class="container section-tight">
+    <div class="photo-grid">
+        <figure class="gallery-item photo-video">
+            <div class="media">
+                <video poster="/images/{{ video.poster }}" controls muted loop playsinline preload="metadata"
+                       aria-label="{{ video.caption }}">
+                    <source src="/images/{{ video.webm }}" type="video/webm">
+                    <source src="/images/{{ video.mp4 }}" type="video/mp4">
+                </video>
+                <span class="chip chip-video mono">&#9654; Video</span>
+            </div>
+            <figcaption><span class="chip mono">Projects</span> {{ video.caption }}</figcaption>
+        </figure>
+
+        {% for photo in photos %}
+            <figure class="gallery-item">
+                <div class="media">
+                    <img src="/images/{{ photo.src }}" alt="{{ photo.caption }}" loading="lazy"
+                         {% if photo.position %}style="object-position: {{ photo.position }}"{% endif %}>
+                </div>
+                <figcaption><span class="chip mono">{{ photo.tag }}</span> {{ photo.caption }}</figcaption>
+            </figure>
+        {% endfor %}
+    </div>
+</section>
+
+{% endblock %}

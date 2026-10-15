@@ -1,96 +1,92 @@
-
 {% extends "base.html" %}
 
-{% block title %}Home - My Portfolio{% endblock %}
+{% block title %}Yann | Builder &amp; future engineer{% endblock %}
+{% block body_class %}page-home{% endblock %}
 
 {% block content %}
 
-<div class="hero">
-
+<section class="hero container">
     <div class="hero-text">
-        <p>Hi, I'm</p>
+        <p class="eyebrow mono"><span class="status-dot"></span> System online</p>
 
-        <h1>Yann<span class="highlight">.</span></h1>
+        <h1 class="hero-title">
+            Hi, I'm Yann<span class="accent">.</span><br>
+            <span class="hero-sub">I build things that <em>work</em>.</span>
+        </h1>
 
-        <p>
-            I'm a Grade 12 student interested in technology,
-            programming and computer engineering. I enjoy
-            building practical projects, solving problems and
-            learning new skills.
+        <p class="lead">
+            Grade 12 student heading for computer engineering. I build with Arduino,
+            Docker, Python and Django, play football, run, and debate at Model United Nations.
         </p>
 
-        <a class="button" href="{% url 'about' %}">
-            Learn more →
-        </a>
-    </div>
+        <div class="terminal mono" aria-label="Status">
+            <div class="terminal-bar"><span></span><span></span><span></span> jarvis@yann:~</div>
+            <pre class="terminal-body">&gt; loading modules: arduino, docker, python, django
+&gt; football boots: laced
+&gt; MUN delegate: ready
+&gt; status: ready for the next build<span class="cursor"></span></pre>
+        </div>
 
-    <img
-        class="hero-image"
-        src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1000&q=80"
-        alt="Computer screen showing a programming workspace"
-    >
-
-</div>
-
-<h2 class="section-title">My Projects</h2>
-
-<div class="projects">
-
-    <div class="card">
-        <img
-            src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=700&q=80"
-            alt="Code displayed on a computer screen"
-        >
-
-        <div class="card-content">
-            <h3>Django Portfolio</h3>
-
-            <p>
-                A personal website built with Django templates,
-                HTML and CSS to showcase my interests and work.
-            </p>
-
-            <a href="{% url 'about' %}">Learn more →</a>
+        <div class="hero-actions">
+            <a class="btn btn-primary" href="{% url 'projects' %}">See my projects</a>
+            <a class="btn btn-ghost" href="{% url 'about' %}">About me</a>
         </div>
     </div>
 
-    <div class="card">
-        <img
-            src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=700&q=80"
-            alt="Computer server equipment"
-        >
-
-        <div class="card-content">
-            <h3>Music Server</h3>
-
-            <p>
-                Exploring music streaming, server applications
-                and tools for organising a personal music library.
-            </p>
-
-            <a href="{% url 'about' %}">Learn more →</a>
+    <figure class="hero-photo">
+        <div class="hero-photo-frame">
+            <img src="/images/me/hero.jpg" alt="Yann setting up a router in the networking lab">
         </div>
+        <span class="hud-label hud-tl mono">ID: YANN</span>
+        <span class="hud-label hud-br mono">MK-YANN &middot; ONLINE</span>
+        <span class="hero-badge" aria-hidden="true">{% include "partials/logo_mark.html" %}</span>
+    </figure>
+</section>
+
+<section class="container stats-strip">
+    <div class="stat">
+        <span class="stat-value">{{ project_count }}</span>
+        <span class="stat-label mono">Builds in the armoury</span>
+    </div>
+    <div class="stat">
+        <span class="stat-value">12</span>
+        <span class="stat-label mono">Grade, final year</span>
+    </div>
+    <div class="stat">
+        <span class="stat-value">MUN</span>
+        <span class="stat-label mono">Delegate &amp; debater</span>
+    </div>
+    <div class="stat">
+        <span class="stat-value">&infin;</span>
+        <span class="stat-label mono">Curiosity</span>
+    </div>
+</section>
+
+<section class="container section">
+    <header class="section-head">
+        <p class="eyebrow mono">// The armoury</p>
+        <h2>Featured builds</h2>
+        <p>Every suit started as a prototype. These are mine.</p>
+    </header>
+
+    <div class="grid grid-3">
+        {% for project in projects %}
+            {% include "partials/project_card.html" %}
+        {% endfor %}
     </div>
 
-    <div class="card">
-        <img
-            src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=700&q=80"
-            alt="Electronic circuit board"
-        >
+    <p class="section-cta"><a class="link-arrow" href="{% url 'projects' %}">All projects</a></p>
+</section>
 
-        <div class="card-content">
-            <h3>Electronics Projects</h3>
-
-            <p>
-                Exploring electronics through Arduino,
-                LEDs, sensors and simple automation experiments.
-            </p>
-
-            <a href="{% url 'about' %}">Learn more →</a>
+<section class="container section">
+    <div class="banner">
+        <div>
+            <p class="eyebrow mono">// Off the clock</p>
+            <h2>Football, MUN, and a few games.</h2>
+            <p>When I'm not at a keyboard I'm on the pitch, out running, or debating at Model United Nations. The About page ends with a few quick games: can you guess my age?</p>
         </div>
+        <a class="btn btn-primary" href="{% url 'about' %}#games">Play the games</a>
     </div>
-
-</div>
+</section>
 
 {% endblock %}
-

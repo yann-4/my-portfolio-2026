@@ -1,33 +1,202 @@
-
 {% extends "base.html" %}
 
-{% block title %}About Me - My Portfolio{% endblock %}
+{% block title %}About | Yann{% endblock %}
 
 {% block content %}
 
-<h1>About Me</h1>
+<section class="container page-head">
+    <p class="eyebrow mono">// Origin story</p>
+    <h1>About me<span class="accent">.</span></h1>
+    <p class="lead">
+        I'm Yann, a Grade 12 student at Path To Success International School who wants to study computer engineering at
+        university. I like knowing how things work, and then making them work better.
+    </p>
+</section>
 
-<p>
-    My name is Yann, and I am currently in Grade 12.
-    I am interested in studying computer engineering
-    at university.
-</p>
+<section class="container section-tight">
+    <div class="story">
+        <div class="story-text">
+            <h2>How it started</h2>
+            <p>
+                I grew up watching <strong>Iron Man</strong>. Tony Stark building a suit
+                in a cave out of a box of scraps showed me that engineering is about
+                solving problems with whatever you have, and making it look good.
+            </p>
+            <p>
+                My <strong>dad</strong> was the one who pushed me into tech. He saw that
+                I wanted to build things and kept encouraging me. Now I'm working toward
+                a career in computer engineering, one project at a time.
+            </p>
+            <p>
+                So far that has meant wiring sensors to an Arduino with my friends,
+                setting up routers in the networking lab, running a music server in
+                Docker, writing Python, and building this site in Django.
+            </p>
+        </div>
 
-<h2>My Interests</h2>
+        <aside class="card spec-sheet">
+            <p class="eyebrow mono">// Spec sheet</p>
+            <dl>
+                <div><dt class="mono">Designation</dt><dd>Yann</dd></div>
+                <div><dt class="mono">Class</dt><dd>Grade 12</dd></div>
+                <div><dt class="mono">Mission</dt><dd>Computer Engineering</dd></div>
+                <div><dt class="mono">Side quests</dt><dd>Football, running, MUN</dd></div>
+            </dl>
+        </aside>
+    </div>
+</section>
 
-<ul>
-    <li>Programming and computer science</li>
-    <li>Electronics and Arduino projects</li>
-    <li>Computer networks and technology</li>
-    <li>Debate and Model United Nations</li>
-</ul>
+<section class="container section">
+    <header class="section-head">
+        <p class="eyebrow mono">// Arsenal</p>
+        <h2>What I work with</h2>
+    </header>
+    <div class="grid grid-3">
+        <div class="card feature">
+            <span class="feature-icon mono">&lt;/&gt;</span>
+            <h3>Software</h3>
+            <p>Python, Django, HTML and CSS. I like building things people can actually use.</p>
+        </div>
+        <div class="card feature">
+            <span class="feature-icon mono">&#x26A1;</span>
+            <h3>Hardware</h3>
+            <p>Arduino, sensors, LEDs and circuits. My favourite part is when code makes something physical move or react.</p>
+        </div>
+        <div class="card feature">
+            <span class="feature-icon mono">&#x2B21;</span>
+            <h3>Networks &amp; systems</h3>
+            <p>Routers, Docker and Linux: setting up networks and servers, and learning what keeps them up.</p>
+        </div>
+    </div>
+</section>
 
-<h2>My Goal</h2>
+<section class="container section" id="mun">
+    <div class="split split-reverse">
+        <div class="split-text">
+            <header class="section-head">
+                <p class="eyebrow mono">// Diplomacy mode</p>
+                <h2>Model United Nations</h2>
+                <p>
+                    I've taken part in Model United Nations, representing countries,
+                    researching global issues and debating resolutions with other delegates.
+                </p>
+                <p>
+                    MUN taught me to speak with confidence, think on my feet and see a
+                    problem from more than one side. Those skills matter just as much in
+                    engineering, where you have to explain your ideas and work in a team.
+                </p>
+            </header>
+            <ul class="tags">
+                <li class="chip mono">Public speaking</li>
+                <li class="chip mono">Debate</li>
+                <li class="chip mono">Research</li>
+                <li class="chip mono">Teamwork</li>
+            </ul>
+        </div>
+        <figure class="gallery-item split-media split-media-wide">
+            <div class="media">
+                <img src="/images/{{ mun_photo.src }}" alt="{{ mun_photo.caption }}" loading="lazy">
+            </div>
+            <figcaption class="mono">{{ mun_photo.caption }}</figcaption>
+        </figure>
+    </div>
+</section>
 
-<p>
-    My goal is to improve my programming skills and learn
-    how to build useful technology through practical projects.
-</p>
+<section class="container section" id="sport">
+    <div class="split">
+        <figure class="gallery-item split-media">
+            <div class="media">
+                <img src="/images/{{ football_photo.src }}" alt="{{ football_photo.caption }}" loading="lazy">
+            </div>
+            <figcaption class="mono">{{ football_photo.caption }}</figcaption>
+        </figure>
+
+        <div class="split-text">
+            <header class="section-head">
+                <p class="eyebrow mono">// Off the clock</p>
+                <h2>Football &amp; running</h2>
+                <p>
+                    Even Tony needed to recharge. I play football with my team and
+                    go out running, and I track my runs on Strava. It's the same
+                    mindset as building: show up, measure, improve.
+                </p>
+            </header>
+
+            <div class="strava-panel card">
+                <div class="strava-head">
+                    <p class="eyebrow mono"><span class="status-dot"></span> Telemetry &middot; Strava</p>
+                    {% if strava_url %}<a class="link-arrow" href="{{ strava_url }}" target="_blank" rel="noopener">Follow on Strava</a>{% endif %}
+                </div>
+                {% if has_strava_stats %}
+                    <div class="stats-grid">
+                        {% for stat in strava_stats %}
+                            <div class="stat">
+                                <span class="stat-value">{% if stat.value is not None %}{{ stat.value }}<small>{{ stat.unit }}</small>{% else %}--{% endif %}</span>
+                                <span class="stat-label mono">{{ stat.label }}</span>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <p class="mono telemetry-pending">&gt; syncing run data... stats coming soon</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <p class="section-cta"><a class="link-arrow" href="{% url 'gallery' %}">See more photos in the gallery</a></p>
+</section>
+
+{# ---------- Games: the answers are checked in core/views.py ---------- #}
+<section class="container section" id="games">
+    <header class="section-head">
+        <p class="eyebrow mono">// Training simulations</p>
+        <h2>How well do you know me?</h2>
+        <p>Three quick games. Make your guess and J.A.R.V.I.S. will tell you how you did.</p>
+    </header>
+
+    <div class="games">
+        <div class="card game">
+            <p class="eyebrow mono">Sim 01</p>
+            <h3>Guess my age</h3>
+            <p>I'll tell you if I'm older or younger than your guess.</p>
+
+            <form method="post" action="{% url 'about' %}#games" class="age-form">
+                {% csrf_token %}
+                <input type="hidden" name="game" value="age">
+                <input type="hidden" name="tries" value="{{ age_result.tries|default:0 }}">
+                <input type="number" name="guess" min="1" max="120" required
+                       placeholder="Your guess" value="{{ age_result.last_guess|default:'' }}"
+                       class="input mono" aria-label="Your guess">
+                <button type="submit" class="btn btn-primary btn-sm">Guess</button>
+            </form>
+
+            {% if age_result %}
+                <p class="game-result {% if age_result.won %}is-win{% endif %} mono">&gt; {{ age_result.message }}</p>
+            {% endif %}
+        </div>
+
+        {% for game in choice_games %}
+            <div class="card game">
+                <p class="eyebrow mono">Sim 0{{ forloop.counter|add:1 }}</p>
+                <h3>{{ game.question }}</h3>
+
+                <form method="post" action="{% url 'about' %}#games" class="choice-form">
+                    {% csrf_token %}
+                    <input type="hidden" name="game" value="{{ game.key }}">
+                    {% for option in game.options %}
+                        <button type="submit" name="choice" value="{{ option }}"
+                                class="choice {% if game.result and option == game.answer %}is-correct{% elif game.result and option == game.result.choice %}is-wrong{% endif %}">
+                            {{ option }}
+                        </button>
+                    {% endfor %}
+                </form>
+
+                {% if game.result %}
+                    <p class="game-result {% if game.result.won %}is-win{% endif %} mono">&gt; {{ game.result.message }}</p>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+</section>
 
 {% endblock %}
-

@@ -1,0 +1,34 @@
+<article class="card project-card" id="{{ project.slug }}">
+    {# Image lives in images/. Projects without an image show the Mark number instead. #}
+    <div class="media">
+        {% if project.video %}
+            {# WebM first (open browsers), MP4 for Safari/iOS. Poster still shows if neither plays. #}
+            <video poster="/images/{{ project.image }}"
+                   muted loop playsinline preload="metadata" {% if full %}controls{% else %}autoplay{% endif %}
+                   aria-label="{{ project.title }} demo video">
+                <source src="/images/{{ project.video }}" type="video/webm">
+                <source src="/images/{{ project.video_mp4 }}" type="video/mp4">
+            </video>
+        {% elif project.image %}
+            <img src="/images/{{ project.image }}" alt="{{ project.title }}" loading="lazy"
+                 {% if project.position %}style="object-position: {{ project.position }}"{% endif %}>
+        {% else %}
+            <div class="media-fallback" aria-hidden="true"><span class="mark-glyph">{{ project.mark }}</span></div>
+        {% endif %}
+        <span class="chip chip-status mono"><span class="status-dot"></span>{{ project.status }}</span>
+        {% if project.video %}<span class="chip chip-video mono">&#9654; Demo</span>{% endif %}
+    </div>
+    <div class="card-body">
+        <p class="eyebrow mono">Mark {{ project.mark }}</p>
+        <h3>{{ project.title }}</h3>
+        <p>{% if full %}{{ project.details }}{% else %}{{ project.summary }}{% endif %}</p>
+        <ul class="tags">
+            {% for tag in project.tags %}<li class="chip mono">{{ tag }}</li>{% endfor %}
+        </ul>
+        {% if full %}
+            <a class="link-arrow" href="{{ project.link }}" target="_blank" rel="noopener">View on GitHub</a>
+        {% else %}
+            <a class="link-arrow" href="{% url 'projects' %}#{{ project.slug }}">Open schematics</a>
+        {% endif %}
+    </div>
+</article>

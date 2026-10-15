@@ -1,0 +1,22 @@
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <div class="footer-brand">
+            {% include "partials/logo_mark.html" %}
+            <div>
+                <p class="footer-name">Yann</p>
+                <p class="footer-tag">Built in a cave. With a box of scraps. <span class="mono">(and Django)</span></p>
+            </div>
+        </div>
+
+        <ul class="footer-links">
+            <li><a href="{{ github_url }}" target="_blank" rel="noopener">GitHub</a></li>
+            {% if strava_url %}<li><a href="{{ strava_url }}" target="_blank" rel="noopener">Strava</a></li>{% endif %}
+            <li><a href="mailto:{{ email }}">Email</a></li>
+            <li><a href="tel:{{ phone_link }}">{{ phone }}</a></li>
+        </ul>
+
+        <p class="footer-meta mono">
+            <span class="status-dot"></span> All systems nominal &middot; &copy; {% now "Y" %} Yann
+        </p>
+    </div>
+</footer>

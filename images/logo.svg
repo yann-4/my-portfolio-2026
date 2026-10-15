@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 172 64" role="img" aria-label="Yann logo">
+  <title>Yann</title>
+  <circle cx="32" cy="32" r="29" fill="none" stroke="#D97757" stroke-width="2.5"/>
+  <circle cx="32" cy="32" r="22" fill="none" stroke="#D97757" stroke-opacity=".55" stroke-width="4" stroke-dasharray="9.8 4" transform="rotate(-81 32 32)"/>
+  <path d="M19 24.5 L45 24.5 L32 47 Z" fill="#E8B464" fill-opacity=".14" stroke="#E8B464" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M19 24.5 L32 33 L45 24.5 M32 33 L32 47" fill="none" stroke="#FAF9F5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="32" cy="33" r="2.6" fill="#FAF9F5"/>
+  <path transform="translate(80 42.5)" fill="#F0EEE6" d="M7.47 -8.58 0.0 -21.0H4.47L9.48 -12.39H9.54L14.55 -21.0H19.02L11.55 -8.58V0.0H7.47ZM29.25 -21.0H32.97L40.65 0.0H36.51L34.8 -4.65H27.42L25.71 0.0H21.57ZM33.9 -8.01 31.11 -15.99H31.05L28.35 -8.01ZM45.15 -21.0H48.81L58.17 -6.75H58.23V-21.0H62.16V0.0H58.5L49.14 -14.22H49.08V0.0H45.15ZM68.46 -21.0H72.12L81.48 -6.75H81.54V-21.0H85.47V0.0H81.81L72.45 -14.22H72.39V0.0H68.46Z"/>
+</svg>

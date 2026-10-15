@@ -1,0 +1,24 @@
+{% with url_name=request.resolver_match.url_name %}
+<header class="site-header">
+    <div class="container header-inner">
+        <a class="brand" href="{% url 'home' %}" aria-label="Yann, home">
+            {% include "partials/logo.html" %}
+        </a>
+
+        {# Mobile menu: the checkbox opens/closes the nav with CSS only #}
+        <input type="checkbox" id="nav-open" class="nav-check">
+        <label for="nav-open" class="nav-toggle" aria-label="Menu">
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+        </label>
+
+        <nav class="site-nav" aria-label="Main">
+            <a href="{% url 'home' %}" {% if url_name == 'home' %}aria-current="page"{% endif %}>Home</a>
+            <a href="{% url 'about' %}" {% if url_name == 'about' %}aria-current="page"{% endif %}>About</a>
+            <a href="{% url 'projects' %}" {% if url_name == 'projects' %}aria-current="page"{% endif %}>Projects</a>
+            <a href="{% url 'gallery' %}" {% if url_name == 'gallery' %}aria-current="page"{% endif %}>Gallery</a>
+            <a href="{% url 'contact' %}" {% if url_name == 'contact' %}aria-current="page"{% endif %}>Contact</a>
+        </nav>
+    </div>
+</header>
+{% endwith %}

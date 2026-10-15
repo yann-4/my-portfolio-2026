@@ -3,230 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{% block description %}Yann: Grade 12 builder, future computer engineer. Arduino, Docker, Python and Django projects.{% endblock %}">
 
-    <title>{% block title %}Yann's portfolio{% endblock %}</title>
+    <title>{% block title %}Yann | Portfolio{% endblock %}</title>
 
-    <style>
-        body {
-            background-color: #0d1722;
-            color: #e8edf4;
-            font-family: Arial, sans-serif;
-            font-size: 16px;
-            line-height: 1.6;
-            margin: 0;
-        }
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E %3Ccircle cx='32' cy='32' r='31' fill='%23141413'/%3E %3Ccircle cx='32' cy='32' r='29' fill='none' stroke='%23D97757' stroke-width='2.5'/%3E %3Ccircle cx='32' cy='32' r='22' fill='none' stroke='%23D97757' stroke-opacity='.55' stroke-width='4' stroke-dasharray='9.8 4' transform='rotate(-81 32 32)'/%3E %3Cpath d='M19 24.5 L45 24.5 L32 47 Z' fill='%23E8B464' fill-opacity='.14' stroke='%23E8B464' stroke-width='2' stroke-linejoin='round'/%3E %3Cpath d='M19 24.5 L32 33 L45 24.5 M32 33 L32 47' fill='none' stroke='%23FAF9F5' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E %3Ccircle cx='32' cy='33' r='2.6' fill='%23FAF9F5'/%3E %3C/svg%3E">
 
-        header {
-            background-color: #101b27;
-            border-bottom: 1px solid #263746;
-            padding: 15px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 
-        header h2 {
-            color: #50d9b0;
-            margin: 0;
-        }
+    {% include "partials/styles.html" %}
 
-        nav a {
-            color: #e8edf4;
-            text-decoration: none;
-            margin-left: 20px;
-        }
-
-        nav a:hover {
-            color: #50d9b0;
-        }
-
-        main {
-            width: 88%;
-            max-width: 1100px;
-            margin: 35px auto;
-            min-height: 450px;
-        }
-
-        h1, h2, h3 {
-            line-height: 1.3;
-        }
-
-        h1 {
-            font-size: 34px;
-        }
-
-        h2 {
-            color: #50d9b0;
-            font-size: 24px;
-        }
-
-        h3 {
-            font-size: 18px;
-        }
-
-        p {
-            color: #c5d0dd;
-        }
-
-        .highlight {
-            color: #50d9b0;
-        }
-
-        .hero {
-            display: flex;
-            align-items: center;
-            gap: 35px;
-            margin-bottom: 35px;
-        }
-
-        .hero-text {
-            flex: 1;
-        }
-
-        .hero-image {
-            width: 45%;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 8px;
-        }
-
-        .button {
-            display: inline-block;
-            background-color: #50d9b0;
-            color: #10201d;
-            padding: 9px 18px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 8px;
-        }
-
-        .button:hover {
-            background-color: #78e8c7;
-        }
-
-        .projects {
-            display: flex;
-            gap: 18px;
-            margin-top: 20px;
-        }
-
-        .card {
-            background-color: #152331;
-            border: 1px solid #263746;
-            border-radius: 7px;
-            overflow: hidden;
-            flex: 1;
-        }
-
-        .card img {
-            width: 100%;
-            height: 155px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .card-content {
-            padding: 15px;
-        }
-
-        .card h3 {
-            color: #e8edf4;
-            margin-top: 0;
-            margin-bottom: 5px;
-        }
-
-        .card p {
-            font-size: 14px;
-            margin-top: 5px;
-        }
-
-        .card a {
-            color: #50d9b0;
-            text-decoration: none;
-        }
-
-        .section-title {
-            border-left: 3px solid #50d9b0;
-            padding-left: 12px;
-        }
-
-        .about-image {
-            width: 100%;
-            max-height: 300px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin: 15px 0;
-        }
-
-        .info-box {
-            background-color: #152331;
-            border: 1px solid #263746;
-            padding: 20px;
-            border-radius: 7px;
-            margin: 20px 0;
-        }
-
-        footer {
-            background-color: #101b27;
-            border-top: 1px solid #263746;
-            text-align: center;
-            padding: 12px;
-            color: #9eafc0;
-            font-size: 13px;
-        }
-
-        @media (max-width: 700px) {
-            header {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            nav a {
-                margin: 0 8px;
-            }
-
-            .hero {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .hero-image {
-                width: 100%;
-                height: 220px;
-            }
-
-            .projects {
-                flex-direction: column;
-            }
-
-            main {
-                width: 90%;
-            }
-        }
-    </style>
+    {% block head %}{% endblock %}
 </head>
 
-<body>
+<body class="{% block body_class %}{% endblock %}">
 
-    <header>
-        <h2>My Portfolio</h2>
+    <div class="hud-grid" aria-hidden="true"></div>
 
-        <nav>
-            <a href="{% url 'home' %}">Home</a>
-            <a href="{% url 'about' %}">About</a>
-            <a href="{% url 'contact' %}">Contact</a>
-        </nav>
-    </header>
+    {% include "partials/nav.html" %}
 
-    <main>
+    <main id="main">
         {% block content %}
         {% endblock %}
     </main>
 
-    <footer>
-        My Portfolio - 2026
-    </footer>
+    {% include "partials/footer.html" %}
 
 </body>
 </html>
