@@ -8,7 +8,7 @@
     <p class="eyebrow mono">// Origin story</p>
     <h1>About me<span class="accent">.</span></h1>
     <p class="lead">
-        I'm Yann, a Grade 12 student at Path To Success International School who wants to study computer engineering at
+        I'm Yann, a Grade 12 student who wants to study computer engineering at
         university. I like knowing how things work, and then making them work better.
     </p>
 </section>
@@ -40,6 +40,7 @@
                 <div><dt class="mono">Designation</dt><dd>Yann</dd></div>
                 <div><dt class="mono">Class</dt><dd>Grade 12</dd></div>
                 <div><dt class="mono">Mission</dt><dd>Computer Engineering</dd></div>
+                <div><dt class="mono">Inspiration</dt><dd>Tony Stark (and Dad)</dd></div>
                 <div><dt class="mono">Side quests</dt><dd>Football, running, MUN</dd></div>
             </dl>
         </aside>
@@ -104,12 +105,16 @@
 
 <section class="container section" id="sport">
     <div class="split">
-        <figure class="gallery-item split-media">
-            <div class="media">
-                <img src="/images/{{ football_photo.src }}" alt="{{ football_photo.caption }}" loading="lazy">
-            </div>
-            <figcaption class="mono">{{ football_photo.caption }}</figcaption>
-        </figure>
+        <div class="photo-pair">
+            {% for photo in sport_photos %}
+                <figure class="gallery-item split-media">
+                    <div class="media">
+                        <img src="/images/{{ photo.src }}" alt="{{ photo.caption }}" loading="lazy">
+                    </div>
+                    <figcaption class="mono">{{ photo.caption }}</figcaption>
+                </figure>
+            {% endfor %}
+        </div>
 
         <div class="split-text">
             <header class="section-head">
@@ -124,10 +129,14 @@
 
             <div class="strava-panel card">
                 <div class="strava-head">
-                    <p class="eyebrow mono"><span class="status-dot"></span> Telemetry &middot; Strava</p>
+                    <p class="eyebrow mono"><span class="status-dot"></span> Featured run &middot; Strava</p>
                     {% if strava_url %}<a class="link-arrow" href="{{ strava_url }}" target="_blank" rel="noopener">Follow on Strava</a>{% endif %}
                 </div>
                 {% if has_strava_stats %}
+                    <p class="run-title">
+                        <strong>{{ strava_run.title }}</strong>
+                        <span class="mono">{{ strava_run.date }} &middot; {{ strava_run.place }}</span>
+                    </p>
                     <div class="stats-grid">
                         {% for stat in strava_stats %}
                             <div class="stat">

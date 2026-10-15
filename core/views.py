@@ -5,7 +5,7 @@ EMAIL = "shemaimanzi4@gmail.com"
 PHONE = "+250 788 242 993"
 PHONE_LINK = "+250788242993"
 # Paste your Strava profile link here, e.g. "https://www.strava.com/athletes/12345678"
-STRAVA_URL = ""
+STRAVA_URL = "https://www.strava.com/athletes/172472779"
 
 # Each project is a "Mark" in the armoury, like Tony's suits.
 # Photos live in images/projects/. Leave "image" out to show a styled placeholder.
@@ -33,13 +33,16 @@ PROJECTS = [
         "mark": "II",
         "slug": "music-server",
         "title": "Self-hosted Music Server",
-        "summary": "My own streaming server, running in Docker, so I can play my music library from any device.",
+        "summary": "My own Navidrome music streaming server, running in Docker, so I can play my music library from any device.",
         "details": (
-            "I containerised a music streaming server with Docker so it is easy "
-            "to set up, restart and move between machines. It taught me about "
+            "I run Navidrome, an open-source music streaming server, in a Docker "
+            "container on my home network. I can browse my albums and stream "
+            "them from any device in a web browser. It taught me about "
             "containers, volumes, ports and keeping a home server running."
         ),
-        "tags": ["Docker", "Linux", "Networking", "Self-hosting"],
+        "tags": ["Docker", "Navidrome", "Linux", "Networking"],
+        "image": "projects/music-server.jpg",
+        "position": "left top",
         "link": GITHUB_URL,
         "status": "Online",
     },
@@ -76,15 +79,24 @@ PROJECTS = [
     },
 ]
 
-# Fill these in from your Strava profile. Leave a value as None to show "--".
+# Featured run from Strava. Swap in a newer run whenever you like.
+STRAVA_RUN = {
+    "title": "Lunch Run",
+    "date": "2 August 2026",
+    "place": "Gasabo District, Kigali",
+    "url": "https://www.strava.com/activities/19567456432",
+}
 STRAVA_STATS = [
-    {"label": "Total distance", "value": None, "unit": "km"},
-    {"label": "Runs logged", "value": None, "unit": ""},
-    {"label": "Longest run", "value": None, "unit": "km"},
-    {"label": "Best 5K", "value": None, "unit": ""},
+    {"label": "Distance", "value": "5.03", "unit": "km"},
+    {"label": "Moving time", "value": "31:09", "unit": ""},
+    {"label": "Pace", "value": "6:11", "unit": "/km"},
+    {"label": "Elevation", "value": "23", "unit": "m"},
 ]
 
-FOOTBALL_PHOTO = {"src": "sport/football-1.jpg", "caption": "Training with the team"}
+SPORT_PHOTOS = [
+    {"src": "sport/football-1.jpg", "caption": "Training with the team"},
+    {"src": "sport/running-1.jpg", "caption": "Out on a run"},
+]
 MUN_PHOTO = {"src": "me/speaking.jpg", "caption": "Speaking at Path to Success Int. School"}
 
 # Everything on the Gallery page. Add a photo: put it in images/ and add a line here.
@@ -92,9 +104,11 @@ GALLERY = [
     {"src": "me/networking-lab.jpg", "caption": "Setting up routers in the networking lab", "tag": "Tech"},
     {"src": "me/at-work.jpg", "caption": "Focused on the build", "tag": "Tech"},
     {"src": "me/speaking.jpg", "caption": "Public speaking at school", "tag": "MUN & speaking"},
+    {"src": "projects/music-server.jpg", "caption": "My Navidrome music server, running in Docker", "tag": "Projects", "position": "left top"},
     {"src": "projects/python.jpg", "caption": "Battle station: OOP in Python", "tag": "Workshop", "position": "center 30%"},
     {"src": "projects/workbench.jpg", "caption": "Arduino, sensors and a 7-segment display", "tag": "Workshop", "position": "center 72%"},
     {"src": "sport/football-1.jpg", "caption": "Training with the team", "tag": "Football"},
+    {"src": "sport/running-1.jpg", "caption": "Out on a run", "tag": "Running"},
     {"src": "life/movie-night-1.jpg", "caption": "Movie night: Into the Spider-Verse", "tag": "Downtime"},
     {"src": "life/movie-night-2.jpg", "caption": "Still one of the best hero films", "tag": "Downtime"},
 ]
@@ -158,10 +172,11 @@ def play_choice_game(post):
 
 def base_context(**extra):
     context = {
-        "github_url":"https://github.com/yann-4",
-        "email": "shemaimanzi4@gmail.com",
+        "github_url": GITHUB_URL,
+        "email": EMAIL,
         "strava_url": STRAVA_URL,
-        "phone": "0788242993",
+        "phone": PHONE,
+        "phone_link": PHONE_LINK,
     }
     context.update(extra)
     return context
@@ -193,9 +208,10 @@ def about(request):
         request,
         "about.html",
         base_context(
+            strava_run=STRAVA_RUN,
             strava_stats=STRAVA_STATS,
             has_strava_stats=any(stat["value"] is not None for stat in STRAVA_STATS),
-            football_photo=FOOTBALL_PHOTO,
+            sport_photos=SPORT_PHOTOS,
             mun_photo=MUN_PHOTO,
             age_result=age_result,
             choice_games=games,
