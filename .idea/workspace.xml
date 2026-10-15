@@ -5,35 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="88a0b16d-a9f0-49b0-8b98-5eec19b3f578" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/images/life/movie-night-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/life/movie-night-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/me/at-work.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/me/hero.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/me/networking-lab.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/me/speaking.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/projects/portfolio.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/projects/python.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/projects/rain-detector.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/projects/rain-detector.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/projects/rain-detector.webm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/projects/workbench.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/sport/football-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/gallery.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/partials/footer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/partials/logo.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/partials/logo_mark.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/partials/nav.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/partials/project_card.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/partials/styles.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/projects.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/at-work.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/hero.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/movie-night-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/movie-night-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/portfolio.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/projects/music-server.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/projects/networking-lab.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/python.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/rain-detector.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/rain-detector.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/rain-detector.webm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/speaking.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/sport/running-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/workbench.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contact.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/projects.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/projects.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,18 +39,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "yann-4"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;yann-4&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/yann-4/my-portfolio-2026.git",
-    "accountId": "32c4d665-c39d-4f0f-aaeb-27eaf15a994f"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/yann-4/my-portfolio-2026.git&quot;,
+    &quot;accountId&quot;: &quot;32c4d665-c39d-4f0f-aaeb-27eaf15a994f&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
@@ -83,17 +72,23 @@
     "django.template.preview.state": "SHOW_EDITOR_AND_PREVIEW",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/Jules B/PycharmProjects/my-portfolio-2026/templates/partials",
+    "last_opened_file_path": "C:/Users/Jules B/PycharmProjects/my-portfolio-2026/images",
+    "node.js.detected.package.jshint": "true",
+    "node.js.selected.package.jshint": "",
     "nodejs_package_manager_path": "npm",
     "python.packages.toolwindow.project.migrated.to.right.top.v2": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Jules B\PycharmProjects\my-portfolio-2026\images" />
       <recent name="C:\Users\Jules B\PycharmProjects\my-portfolio-2026\templates\partials" />
       <recent name="C:\Users\Jules B\PycharmProjects\my-portfolio-2026\portfolio" />
       <recent name="C:\Users\Jules B\PycharmProjects\my-portfolio-2026\core" />
-      <recent name="C:\Users\Jules B\PycharmProjects\my-portfolio-2026\images" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Jules B\PycharmProjects\my-portfolio-2026\images\projects" />
+      <recent name="C:\Users\Jules B\PycharmProjects\my-portfolio-2026\images\sport" />
     </key>
   </component>
   <component name="RunManager">
@@ -142,6 +137,7 @@
       <workItem from="1791968058189" duration="1192000" />
       <workItem from="1791979501696" duration="957000" />
       <workItem from="1792046693272" duration="2277000" />
+      <workItem from="1792053472313" duration="1280000" />
     </task>
     <servers />
   </component>

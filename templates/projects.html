@@ -1,10 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-</body>
-</html>
+{% block title %}Projects | Yann{% endblock %}
+
+{% block content %}
+
+<section class="container page-head">
+    <p class="eyebrow mono">// The armoury</p>
+    <h1>Projects<span class="accent">.</span></h1>
+    <p class="lead">
+        Tony numbered his suits. I number my builds. Each one taught me something
+        the last one couldn't.
+    </p>
+</section>
+
+<section class="container section-tight">
+    <div class="grid grid-2">
+        {% for project in projects %}
+            {% include "partials/project_card.html" with full=True %}
+        {% endfor %}
+    </div>
+</section>
+
+<section class="container section">
+    <div class="banner">
+        <div>
+            <p class="eyebrow mono">// Next build</p>
+            <h2>Mark {{ projects|length|add:1 }} is on the workbench.</h2>
+            <p>Follow along on GitHub to see what I'm building next.</p>
+        </div>
+        <a class="btn btn-primary" href="{{ github_url }}" target="_blank" rel="noopener">GitHub profile</a>
+    </div>
+</section>
+
+{% endblock %}

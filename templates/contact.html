@@ -14,7 +14,7 @@
 </section>
 
 <section class="container section-tight">
-    <div class="grid grid-3">
+    <div class="grid grid-2">
         <a class="card contact-card" href="mailto:{{ email }}">
             <span class="feature-icon mono">@</span>
             <h3>Email</h3>
@@ -33,6 +33,14 @@
             <p class="mono">github.com/yann-4</p>
             <span class="link-arrow">View my code</span>
         </a>
+        {% if strava_url %}
+        <a class="card contact-card" href="{{ strava_url }}" target="_blank" rel="noopener">
+            <span class="feature-icon mono">&#x2197;</span>
+            <h3>Strava</h3>
+            <p class="mono">Running telemetry</p>
+            <span class="link-arrow">Follow my runs</span>
+        </a>
+        {% endif %}
     </div>
 </section>
 
